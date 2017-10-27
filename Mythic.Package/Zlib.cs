@@ -98,7 +98,7 @@ namespace Mythic.Package
 		/// <returns>Error</returns>
 		public static ZLibError Decompress( byte[] dest, ref int destLength, byte[] source, int sourceLength )
 		{
-			if ( SystemInfo.IsX64 )
+			if ( Environment.Is64BitProcess )
 				return uncompress64( dest, ref destLength, source, sourceLength );
 
 			return uncompress( dest, ref destLength, source, sourceLength );
@@ -122,7 +122,7 @@ namespace Mythic.Package
 		/// <returns><see cref="ZLibError.Okay"/> if okay.</returns>
 		public static ZLibError Compress( byte[] dest, ref int destLength, byte[] source, int sourceLength )
 		{
-			if ( SystemInfo.IsX64 )
+			if ( Environment.Is64BitProcess )
 				return compress64( dest, ref destLength, source, sourceLength );
 
 			return compress( dest, ref destLength, source, sourceLength );
@@ -145,7 +145,7 @@ namespace Mythic.Package
 		/// <returns><see cref="ZLibError.Okay"/> if okay.</returns>
 		public static ZLibError Compress( byte[] dest, ref int destLength, byte[] source, int sourceLength, ZLibQuality quality )
 		{
-			if ( SystemInfo.IsX64 )
+			if ( Environment.Is64BitProcess )
 				return compress64( dest, ref destLength, source, sourceLength, quality );
 
 			return compress( dest, ref destLength, source, sourceLength, quality );

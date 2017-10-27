@@ -33,6 +33,7 @@ namespace Mythic.Package.Editor
 			if ( m_File != null )
 			{
 				string fileName = FileName.Text.ToLower();
+                //FileName.Text = HashDictionary.HashFileName(fileName).ToString("X16");
 
 				if ( m_File.FileHash == HashDictionary.HashFileName( fileName ) )
 				{
@@ -43,6 +44,7 @@ namespace Mythic.Package.Editor
 				}
 				else
 					Status.Text = Globals.LanguageManager.GetString( "GuessFileDialog_InvalidName" );
+                Status.Text = HashDictionary.HashFileName(fileName).ToString("X16");
 			}
 		}
 		#endregion

@@ -215,7 +215,7 @@ namespace Mythic.Package.Spy
 				NativeMethods.ReadProcessMemory( m_ProcessHandle, ptrAddr, buffer, length, out read );
 
 				if ( read != length )
-					throw new Win32Exception( String.Format( "Read data lenght doesn't match requested: {0}/{1}!", read, length ) );
+					throw new Win32Exception( String.Format( "Read data length doesn't match requested: {0}/{1}!", read, length ) );
 			}
 
 			return buffer;

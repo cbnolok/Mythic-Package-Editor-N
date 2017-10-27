@@ -11,9 +11,10 @@ namespace Mythic.Package.Spy
 
 		private byte[] m_Buffer;
 
-		private const uint StartAddress = 0x665000;
-		private const uint EndAddress = 0x8E5000;
-		private const uint ScanRange = EndAddress - StartAddress;	
+        private const uint StartAddress = 0x500000; //0x665000;
+        private const uint EndAddress = 0xAE5000; //0x8E5000;
+
+        private const uint ScanRange = EndAddress - StartAddress;	
 
 		private static ASCIIEncoding m_Encoding = new ASCIIEncoding();
 
@@ -31,7 +32,7 @@ namespace Mythic.Package.Spy
 
 		private uint FindBreakPoint()
 		{
-			m_Buffer = ReadProcessMemory( StartAddress, ScanRange );			
+			m_Buffer = ReadProcessMemory( StartAddress, ScanRange );
 
 			for ( int i = 0; i < m_Buffer.Length - m_Signature.Length; i ++ )
 			{

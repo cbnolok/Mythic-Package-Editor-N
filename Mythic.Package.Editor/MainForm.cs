@@ -1612,8 +1612,11 @@ namespace Mythic.Package.Editor
 
 		private void HashSpy_HashFound( ulong hash, string fileName )
 		{
-			if ( HashDictionary.Contains( hash ) )
-				HashDictionary.Set( hash, fileName );
+            if (HashDictionary.Contains(hash))
+            {
+                HashDictionary.Set(hash, fileName);
+                Globals.Logger.LogMessage(String.Format("Found string for hash {0:X}: {1}", hash, fileName));
+            }
 		}
 
 		private void MythicPackage_UpdateProgress( int current, int max )

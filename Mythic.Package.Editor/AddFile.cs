@@ -24,7 +24,7 @@ namespace Mythic.Package.Editor
 			}
 		}
 
-		public string InnerDirectory{ get { return TextInnerDirectory.SelectedItem as string; } }
+		public string InnerDirectory{ get { return TextInnerDirectory.Text; } }
 		public CompressionFlag Compression{ get { return (CompressionFlag) TextCompression.SelectedIndex; } }
 		#endregion
 
